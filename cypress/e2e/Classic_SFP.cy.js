@@ -4,7 +4,7 @@ describe("Clasiic SFP", () => {
 
 //Login page URL Assertion
     cy.visit("https://manage-sfp-ic.eloci.us");
-    cy.url().should('eq', 'https://manage-sfp-ic.eloci.us')
+    cy.url().should('eq', 'https://manage-sfp-ic.eloci.us/3.72.9/login')
     
 // Login
     cy.get("#username").click();
@@ -14,7 +14,7 @@ describe("Clasiic SFP", () => {
     cy.get("#loginUser").click();
     cy.wait(4000)
 // Dervice page URL Assertion
-    cy.url().should('eq','https://manage-sfp-ic.eloci.us/3.70.105/devices')
+    cy.url().should('eq','https://manage-sfp-ic.eloci.us/3.72.9/devices')
     cy.wait(4000)
 // Add new device   
     cy.get("a[id='btn-toggle'] span").click();
@@ -50,9 +50,6 @@ describe("Clasiic SFP", () => {
       cy.get("#deviceName").clear().type("Device56");
       cy.get("#deviceName").click();
       cy.get("#deviceName").clear().type("Device");
-      cy.get("a.clearFloat").click();
-
-
-      
+      cy.get("a.clearFloat").click();     
   });
 });
