@@ -29,3 +29,11 @@
 /// <reference types="Cypress"/>
 require('cypress-xpath');
 // ///<reference types="Cypress-xpath"/>
+Cypress.on('uncaught:exception', (err, runnable) => {
+    // Ignore a specific error message or condition
+    if (err.message.includes('The user is not authenticated')) {
+        return false; // Prevents Cypress from failing the test
+    }
+    // Let all other exceptions fail the test
+    return true;
+});
