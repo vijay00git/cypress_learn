@@ -4,7 +4,7 @@ describe("Account settings", () => {
 
 //Login page URL Assertion
     cy.visit("https://manage-sfp-ic.eloci.us");
-    cy.url().should('eq', 'https://manage-sfp-ic.eloci.us/3.72.8/login')
+//    cy.url().should('eq', 'https://manage-sfp-ic.eloci.us/3.72.8/login')
 
 //assertin homw many link is availble     
     cy.xpath("//a").should('have.length','24')

@@ -32,6 +32,8 @@ describe("Polaris", () => {
           }
         });
       });
+    });
+});
 
     // if (cy.xpath("//tbody//tr//td").should('be.visible')
     //     .contains('autoDevice'))
@@ -62,5 +64,5 @@ describe("Polaris", () => {
 
     // });
 
-     });
+     
 
