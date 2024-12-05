@@ -1,5 +1,6 @@
 {
   "dependencies": {
+    "@4tw/cypress-drag-drop": "^2.2.5",
     "init": "^0.1.2"
   },
   "devDependencies": {

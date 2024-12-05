@@ -1,3 +1,7 @@
+module.exports = {
+  defaultCommandTimeout: 8000, // Increase default timeout
+};
+
 const { defineConfig } = require("cypress");
 
 module.exports = defineConfig({
