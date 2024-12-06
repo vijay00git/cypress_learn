@@ -37,3 +37,5 @@ Cypress.on('uncaught:exception', (err, runnable) => {
     // Let all other exceptions fail the test
     return true;
 });
+// add files plugin
+import 'cypress-file-upload';

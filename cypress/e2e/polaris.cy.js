@@ -49,13 +49,22 @@ describe("Polaris", () => {
         cy.get('[data-cy="categoryGroupAdd-button-save"] > .MuiButton-label').click();
     })
 
-        // it('verify user able to drag and drop the device on group', () => {
-        //     cy.wait(8000);
-        //     cy.contains('.devices_autosizerlist__QxazO', 'ee').within(() => {
-        //         cy.get('[data-cy="dragComponent-module-dragger"]').drag('data-cy="dropComponent-module-droppingDiv"');
-        //       });
-        
-
-    // })
+    it('verify user able to drag and drop the device on group', () => {
+        //add device to add it in group
+        cy.wait(8000);
+        cy.get('[data-cy="deviceComponent-module-addDeviceButton"]').click();
+        cy.get(':nth-child(1) > :nth-child(1) > .textfieddeactv > [data-cy="addDevice-input-name"] > .MuiInputBase-root > #outlined-basic').type('autoDevice');
+        cy.get(':nth-child(1) > :nth-child(2) > .textfieddeactv > [data-cy="addDevice-input-serial"] > .MuiInputBase-root > #outlined-basic').type('G98774773');
+        cy.get('.devicedialogright .buttoncomponent-start .MuiButtonBase-root').click().wait(8000);
+        cy.get('.checkallbtnscls > .MuiIconButton-root').click();
+        cy.wait(8000);    
+        // Find and store the initial element as an alias
+        cy.get('.devices_autosizerlist__QxazO').contains('autoDevice').as('deviceToDrag');    
+        // Drag the element using the alias
+        cy.get('@deviceToDrag').drag('[data-cy="groupsFilter-module-ulListing"] > :nth-child(1) > [data-cy="dropComponent-module-droppingDiv"]', { force: true });        
+        cy.wait(10000);    
+        // Interact with the modal and handle potential re-rendering
+        cy.get('[data-cy="alertDialog-module-deleteButton"]').click({ force: true });
+    });
     });
    
