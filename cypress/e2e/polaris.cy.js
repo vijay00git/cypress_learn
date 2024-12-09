@@ -82,7 +82,7 @@ describe("Polaris", () => {
     it('verify user able to delete group with devices', () => {
         //add device to add it in group
         cy.wait(8000);
-        cy.get(':nth-child(1) > [data-cy="dropComponent-module-droppingDiv"] > [data-cy="groupFilter-module-liListing"]').click();
+        cy.get('.expanedAccordionBoth.accordionDiv.groupDevice').contains('autoGroup').click();
         cy.get('.groupSettingDiv').click();
         cy.get('#vertical-tab-1').click();
         cy.get('[data-cy="settingsDisplay-button-edit"]').click();
@@ -90,7 +90,7 @@ describe("Polaris", () => {
         cy.wait(8000);
         cy.get('.MuiDialogActions-root > :nth-child(2) > .MuiButtonBase-root').click();
 });
-    it('add URL content', () => {
+    it('add new webapp content', () => {
         cy.wait(8000);
         cy.get('[data-cy="leftSidebar-ul-listing"] > :nth-child(3)').click();
         cy.get('.addbuttoncomponent-start.undefined').click().wait(8000);
@@ -104,7 +104,7 @@ describe("Polaris", () => {
         cy.wait(8000);
         });
 
-    it('add URL content', () => {
+    it('Delete WebApp content', () => {
             cy.wait(8000);
             cy.get('[data-cy="leftSidebar-ul-listing"] > :nth-child(3)').click();
             cy.get('[data-cy="contentFilter-module-ulTag"] > :nth-child(3)').click();
